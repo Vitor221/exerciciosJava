@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/vitor/Área de Trabalho/JavaProjetos/.metadata/.plugins/org.eclipse.jdt.core
+63264785.index
+1865797976.index
+466195509.index
