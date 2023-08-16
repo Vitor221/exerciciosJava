@@ -43,10 +43,6 @@ public class Order {
         this.status = status;
     }
 
-    public List<OrderItem> getItems() {
-        return items;
-    }
-
     public Client getClient() {
         return client;
     }
@@ -64,11 +60,26 @@ public class Order {
     }
 
     public Double total() {
-        double sum = 0;
+        double sum = 0.0;
         for(OrderItem order : items) {
             sum += order.subTotal();
         }
         return sum;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ORDER SUMMARY: \n");
+        sb.append("Order moment: " + sdf.format(moment) + "\n");
+        sb.append("Order status: " + getStatus() + "\n");
+        sb.append("Client: " + client + "\n");
+        sb.append("Order items: \n");
+        for(OrderItem order : items) {
+            sb.append(order + "\n");
+        }
+        sb.append("Total price: " + total() + "\n");
+        return sb.toString();
     }
 
 }

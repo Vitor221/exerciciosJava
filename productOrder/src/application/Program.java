@@ -48,19 +48,10 @@ public class Program {
 
             OrderItem items = new OrderItem(quantity, new Product(productName, productPrice), productPrice);
             clientOrder.addItem(items);
-
         }
 
         System.out.println();
 
-        System.out.println("ORDER SUMMARY:");
-        System.out.println("Order moment: " + clientOrder.getMoment());
-        System.out.println("Order status: " + clientOrder.getStatus());
-        System.out.println("Client: " + clientOrder.getClient().getName() + " (" + sdf.format(clientOrder.getClient().getBirthDate()) + ")" + " - " + clientOrder.getClient().getEmail());
-        System.out.println("Order items:");
-        for(OrderItem item : clientOrder.getItems()) {
-            System.out.print(item.getProduct().getName() + ", $" + String.format("%.2f", item.getProduct().getPrice()) + ", Quantity: " + item.getQuantity() + ", Subtotal: $" + String.format("%.2f", item.subTotal()) + "\n");
-        }
-        System.out.println("Total price: $" + String.format("%.2f", clientOrder.total()));
+        System.out.print(clientOrder);
     }
 }
