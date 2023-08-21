@@ -32,7 +32,7 @@ public class Program {
             if(cui == 'c') {
                 list.add(new Product(name, price));
             } else if(cui == 'u') {
-                System.out.print("Manufacture date (DD/MM/YYYY");
+                System.out.print("Manufacture date (DD/MM/YYYY): ");
                 Date manufactureDate = sdf.parse(sc.next());
                 list.add(new UsedProduct(name, price, manufactureDate));
             } else if(cui == 'i') {
@@ -42,9 +42,11 @@ public class Program {
             }
         }
 
+        System.out.println();
+
         System.out.println("PRICE TAGS:");
         for(Product prod : list) {
-            System.out.println(prod.getName() + " $" + prod.getPrice() + " " + prod.priceTag());
+            System.out.println(prod);
         }
     }
 }
