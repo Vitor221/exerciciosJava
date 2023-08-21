@@ -29,6 +29,6 @@ public class Individuals extends TaxPayer {
             percentTax = 0.25;
         }
 
-        return annualIncome * percentTax - healthSpending * 0.50;
+        return (annualIncome * percentTax) - (healthSpending * 0.50);
     }
 }
